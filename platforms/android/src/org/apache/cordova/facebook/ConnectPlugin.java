@@ -433,8 +433,8 @@ public class ConnectPlugin extends CordovaPlugin {
                 cordova.getActivity().runOnUiThread(runnable);
             } else if (this.method.equalsIgnoreCase("apprequests")) {
                 Runnable runnable = new Runnable() {
-                    paramBundle.putString("frictionless", "1");
                     public void run() {
+                        paramBundle.putString("frictionless", "1");
                         WebDialog requestsDialog = (new WebDialog.RequestsDialogBuilder(me.cordova.getActivity(), Session.getActiveSession(), paramBundle)).setOnCompleteListener(dialogCallback)
                             .build();
                         requestsDialog.show();
